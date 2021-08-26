@@ -1,23 +1,24 @@
-import logo from './logo.svg';
+
 import './App.css';
+import NavBar from "./components/NavBar";
+import {Profiles} from "./components/data.js";
+import ListeProfile from './components/ListeProfile';
+import Footer from './components/Footer';
 
 function App() {
+  const handleName = (a) => {
+    return alert(`Hello ${a}`);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <NavBar/>
+   
+    <ListeProfile Profiles={Profiles} handleName={handleName}> 
+    <h1 style={{color: '#1E3163'}}>Cards List</h1>
+    </ListeProfile>
+    <Footer/>
+   
+   
     </div>
   );
 }
